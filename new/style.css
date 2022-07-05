@@ -273,6 +273,9 @@ a:hover {
 }
 
 .row-no-gutters {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     margin-right: 0;
     margin-left: 0;
 }
@@ -435,7 +438,7 @@ nav .caret {
     float: right;
 }
 
-.mg-md {
+.mg-md{
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -638,7 +641,6 @@ a[data-lightbox]:hover img {
     color: rgba(0, 0, 0, .5);
     background: none;
 }
-
 h1,
 h2,
 h3,
@@ -676,11 +678,16 @@ a {
     margin: auto auto auto auto;
 }
 
-p {
-    font-size: 20px;
-    font-weight: 900;
-}
 
+p {
+    font-size: 16px;
+    font-weight: 600;
+}
+@media (max-width: 768px) {
+    p{ 
+        width: 100%;
+    }
+}
 .tight-width-whitespace {
     max-width: 600px;
     margin: auto auto auto auto;
@@ -701,21 +708,43 @@ p {
 }
 
 .social {
-    max-width: 400px;
-    margin: auto auto auto auto;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-decoration: none;
+    color: #000000;
+  
 }
 
+@media (max-width: 767px) {
+    .social{ 
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 25%;
+    }
+}
+@media (min-width: 500px) and (max-width: 992px) {
+    .social{ 
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;}
+}
+
+
+
 h2 {
-    font-size: 30px;
-    font-weight: 900;
+    font-size: 22px;
     line-height: 1.4em;
 }
 
 h3 {
     font-size: 16px;
     text-transform: uppercase;
-    font-weight: 700;
-    color: #333333!important;
+    color: black!important;
 }
 
 .med-width-whitespace {
@@ -739,7 +768,7 @@ h4 {
 
 .white {
     color: #FFFFFF!important;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 .portfolio-thumb {
@@ -756,7 +785,7 @@ h4 {
 }
 
 .black-background {
-    background-color: rgba(107, 83, 21, 0.7);
+    background-color: rgba(252, 243, 201, 0.7);
     padding: 40px 40px 40px 40px;
 }
 
@@ -778,7 +807,8 @@ h4 {
 }
 
 .tc-white {
-    color: #FFFFFF!important;
+    color: white!important;
+    font-weight: bold;
 }
 
 .btn-atomic-tangerine {
@@ -800,7 +830,7 @@ h4 {
 }
 
 .ltc-atomic-tangerine {
-    color: #FFFFFF!important;
+    color: black!important;
 }
 
 .ltc-atomic-tangerine:hover {
@@ -851,13 +881,13 @@ h4 {
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media only screen and (minwidth: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .b-parallax {
         background-attachment: scroll;
     }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
     .b-parallax {
         background-attachment: scroll;
     }
@@ -905,7 +935,6 @@ h4 {
     h6,
     p,
     #disqus_thread {
-        font-size: 16px;
         padding-left: 10px!important;
         padding-right: 10px!important;
     }
